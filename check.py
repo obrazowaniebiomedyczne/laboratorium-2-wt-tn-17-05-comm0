@@ -1,10 +1,10 @@
 from solution import *
 from obpng import read_png, write_png
 
-"""
+
 print("- Ocena dostateczna")
 renew_pictures()
-"""
+
 
 """
 print("- Ocena dobra")
