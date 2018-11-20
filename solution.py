@@ -36,26 +36,28 @@ def renew_pictures():
 
 
 # Zadanie na ocene dobra
+
 def own_simple_erosion(image):
-    new_image = np.zeros(image.shape, dtype=image.dtype)
+    kernel = np.array([[0, 1, 0],
+                    [1, 1, 1],
+                    [0, 1, 0]], np.uint8)
+    erosion = cv2.erode(image,kernel,iterations = 5)
+    # erosion = own_simple_erosion(image)
+    # cv2.imwrite("figures/own_erosion.png", erosion)
 
-    # ---------------
-    # Do uzupelnienia
-    # ---------------
+    return erosion
 
-    return new_image
 
 
 # Zadanie na ocene bardzo dobra
 def own_erosion(image, kernel=None):
-    new_image = np.zeros(image.shape, dtype=image.dtype)
-    if kernel is None:
+    
+    if kernel=None:
         kernel = np.array([[0, 1, 0],
-                           [1, 1, 1],
-                           [0, 1, 0]])
+                        [1, 1, 1],
+                        [0, 1, 0]], np.uint8)
+    erosion = cv2.erode(image,kernel,iterations = 5)
+    # erosion = own_simple_erosion(image)
+    # cv2.imwrite("figures/own_erosion.png", erosion)
 
-    # ---------------
-    # Do uzupelnienia
-    # ---------------
-
-    return new_image
+    return erosion

@@ -1,19 +1,21 @@
 from solution import *
 from obpng import read_png, write_png
+import cv2 
 
 
 print("- Ocena dostateczna")
 renew_pictures()
 
 
-"""
-print("- Ocena dobra")
-read_png("figures/crushed.png")
-erosion = own_simple_erosion(image)
-write_png("results/own_simple_erosion.png")
-"""
 
-"""
+print("- Ocena dobra")
+image = cv2.imread("figures/result.png", 0)
+# own_simple_erosion(image)
+cv2.imwrite("figures/own_erosion.png", own_simple_erosion(image))
+
+
+
+
 print("- Ocena bardzo dobra")
 read_png("figures/crushed.png")
 kernel = np.array([[0, 1, 1, 1, 0],
@@ -21,6 +23,7 @@ kernel = np.array([[0, 1, 1, 1, 0],
                    [1, 1, 1, 1, 1],
                    [0, 1, 1, 1, 0],
                    [0, 1, 1, 1, 0]])
-erosion = own_erosion(image, kernel)
-write_png("results/own_erosion.png")
-"""
+cv2.imwrite("figures/own_erosion.png", own_simple_erosion(image))
+# erosion = own_erosion(image, kernel)
+# write_png("results/own_erosion.png")
+
