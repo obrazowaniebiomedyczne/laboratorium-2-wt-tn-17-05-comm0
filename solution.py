@@ -50,13 +50,9 @@ def own_simple_erosion(image):
 
 
 # Zadanie na ocene bardzo dobra
-def own_erosion(image, kernel=None):
+def own_erosion(image, kernel):
     
-    if kernel=None:
-        kernel = np.array([[0, 1, 0],
-                        [1, 1, 1],
-                        [0, 1, 0]], np.uint8)
-    erosion = cv2.erode(image,kernel,iterations = 5)
+    erosion = cv2.erode(image,kernel,iterations = 1)
     # erosion = own_simple_erosion(image)
     # cv2.imwrite("figures/own_erosion.png", erosion)
 
